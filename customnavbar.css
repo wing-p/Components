@@ -1,0 +1,65 @@
+//customise vertical navbar 
+@media only screen and (min-width: 600px) {
+/*animation effect*/
+.animated {
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+	animation-fill-mode: both;}
+	
+.third-menu {
+	position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #fff;
+    z-index: 200;
+    width: 66px;
+} 
+
+.navTrns, #customnavbar, #menu-nav-bar {
+	height: 100%; 
+	}
+	
+#customnavbar .menu-item-has-children {
+	height: 100%;
+	padding: 100% 30%; 
+	text-align: center; 
+
+	}
+
+#customnavbar .navttle {
+	border-right: 3px solid #e6e6e6;	
+	}
+	
+.customnavbar .menu-item-has-children a{
+	text-decoration: none; 
+	}
+	
+.customnavbar .sub-menu {
+	width: 350px;
+	height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+	text-align: center;
+	background: #fff;
+}
+
+.customnavbar .sub-menu li{
+	border: 1px solid #e6e6e6;
+	border-top: 0px; 
+	padding: 25% 0%;
+}
+
+#customnavbar #menu-nav-bar:hover {margin-left:-999em;}
+	
+#menu-nav-bar li ul {
+    margin-left:-999em;/* hide initially  off screen  */
+}
+#menu-nav-bar li:hover ul {/* this should really be handled when clicked not hovered*/
+    margin-left:0;
+    height:auto;
+    overflow:visible;
+}
+}
