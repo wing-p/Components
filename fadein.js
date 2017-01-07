@@ -17,3 +17,11 @@ jQuery(function ($) {
     
     });
 });
+
+
+/***CSS class edit 
+use "fadeInBlock" class to apply fade in effects
+.fadeInBlock {
+	opacity: 0; 
+	} 
+***/
