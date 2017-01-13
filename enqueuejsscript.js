@@ -12,3 +12,13 @@ function wing_enqueue_scripts() {
 	//boolean for loading js script at footer//
 	true);
 }
+
+//enqueue plugin file 
+plugin_dir_path( string $file ) 
+//* $file (string) (Required) The filename of the plugin (__FILE__). 
+
+//*e.g. 
+function plugin_dir_path( $file ) {
+    return trailingslashit( dirname( $file ) );
+} 
+
