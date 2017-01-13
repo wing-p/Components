@@ -21,4 +21,3 @@ plugin_dir_path( string $file )
 function plugin_dir_path( $file ) {
     return trailingslashit( dirname( $file ) );
 } 
-
