@@ -45,7 +45,7 @@ class Custom_Featured_Post extends Genesis_Featured_Post {
 		'context' => 'entry',
 		) );
 			if ( $instance['show_title'] )
-			echo genesis_html5() ? '<header class="entry-header slidingbox">' : '';
+			echo genesis_html5() ? '<header class="entry-header come-in">' : '';
 			echo '<div class="RightSlide">'; 
 				
 				if ( ! empty( $instance['show_content'] ) ) {
