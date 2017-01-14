@@ -9,3 +9,15 @@ $("nav").find("a").click(function(e) {
     });
 });
 });
+
+/*Sample html code 
+<nav>
+    <a href="#welcome">Welcome</a>
+    <a href="#about">About</a>
+    <a href="#section3">Section 3</a>
+</nav>
+
+<div id="welcome">Welcome to this website</div>
+<div id="about">About this website, and such</div>
+<div id="section3">The third section</div> 
+*/ 
