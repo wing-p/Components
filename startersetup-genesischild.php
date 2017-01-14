@@ -10,50 +10,24 @@
  * @link    http://www.studiopress.com/
  */
 
-//* Start the engine
-include_once( get_template_directory() . '/lib/init.php' );
+add_action( 'genesis_setup','child_theme_setup', 15 );
+//set up child theme
+function child_theme_setup() {
+	define( 'CHILD_THEME_NAME', 'Hashtag' );
+	define( 'CHILD_THEME_URL', 'http://www.hashtag.com' );
+	define( 'CHILD_THEME_VERSION', '1.0.0' );	
+	} 
 
-//* Setup Theme
-include_once( get_stylesheet_directory() . '/lib/theme-defaults.php' );
-
-//* Set Localization (do not remove)
-load_child_theme_textdomain( 'hashtag', apply_filters( 'child_theme_textdomain', get_stylesheet_directory() . '/languages', 'hashtag' ) );
-
-//* Add Image upload and Color select to WordPress Theme Customizer
-require_once( get_stylesheet_directory() . '/lib/customize.php' );
-
-//* Include Customizer CSS
-include_once( get_stylesheet_directory() . '/lib/output.php' );
-
-//* Child theme (do not remove)
-define( 'CHILD_THEME_NAME', 'Hashtag' );
-define( 'CHILD_THEME_URL', 'http://www.studiopress.com/' );
-define( 'CHILD_THEME_VERSION', '2.2.4' );
-
-//* Add HTML5 markup structure
-add_theme_support( 'html5', array( 'caption', 'comment-form', 'comment-list', 'gallery', 'search-form' ) );
-
-//* Add Accessibility support
-add_theme_support( 'genesis-accessibility', array( '404-page', 'drop-down-menu', 'headings', 'rems', 'search-form', 'skip-links' ) );
-
-//* Add viewport meta tag for mobile browsers
+//enable HTML5 
+add_theme_support( 'html5');
 add_theme_support( 'genesis-responsive-viewport' );
+add_theme_support( 'genesis-footer-widgets', 1 ); 
 
-//* Add support for 3-column footer widgets
-add_theme_support( 'genesis-footer-widgets', 3 );
-
-//* Add Image Sizes
-add_image_size( 'featured-image', 720, 400, TRUE );
-
-//*Start customisation
-//* Load custom.css
+//Load custom.css
 add_action( 'wp_enqueue_scripts', 'custom_load_custom_style_sheet' );
 function custom_load_custom_style_sheet() {
- wp_enqueue_style( 'custom-stylesheet', CHILD_URL . '/custom.css', array(), PARENT_THEME_VERSION );
-}
+	wp_enqueue_style( 'custom-stylesheet', CHILD_URL . '/custom.css', array(), PARENT_THEME_VERSION );
+	}	
 
-//* Add support for structural wraps
-add_theme_support( 'genesis-structural-wraps', array(
-    'header',
-    'menu-primary',
-) );
+//customise genesis wrap 
+add_theme_support( 'genesis-structural-wraps', array( 'header', 'entry-content', 'site-inner', 'footer-widgets', 'footer' ) );
