@@ -1,0 +1,39 @@
+/**Read more on https://css-tricks.com/useful-nth-child-recipies/
+**/
+
+/**Select only the fifth element 
+XXXXOXXXXX **/
+li:nth-child(5) {
+    color: green;   
+}
+
+/**Select all but the first five
+XXXXXOOOOOOOOOOOOOO **/ 
+li:nth-child(n+6) {
+    color: green;   
+}
+
+/**Select only the first five 
+OOOOOXXXXXX **/
+li:nth-child(-n+5) {
+    color: green;   
+}
+
+/**Select every 4, starting at the 1st
+OXXXOXXXOXXX **/ 
+li:nth-child(4n-7) {  /* or 4n+1 */
+    color: green;   
+}
+
+li:nth-child(odd/even) {
+    color: green;   
+}
+
+li:last-child {
+    color: green;
+}
+
+/**Select second last element **/
+li:nth-last-child(2) {
+    color: green;
+}
